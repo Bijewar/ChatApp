@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ChatApp - Real-time Multi-user Chat Application
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.5-black?logo=next.js)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://react.dev)
+[![Socket.io](https://img.shields.io/badge/Socket.io-4.8.1-green?logo=socket.io)](https://socket.io)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue?logo=typescript)](https://typescriptlang.org)
 
-First, run the development server:
+## 🚀 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+ChatApp is a modern, responsive real-time chat application built with Next.js 14 (App Router), React 18, and Socket.io. Users can join with a username, send messages instantly to all connected users, see online user lists, and receive join/leave notifications. Features a clean UI with sidebar, auto-scrolling messages, and login form.
+
+Perfect for learning real-time features, Socket.io integration with Next.js API routes, and full-stack development.
+
+## ✨ Features
+
+- ✅ Real-time messaging with Socket.io
+- ✅ User authentication (simple username login)
+- ✅ Online users sidebar with indicators
+- ✅ Join/leave system notifications
+- ✅ Auto-scrolling chat window
+- ✅ Responsive design (desktop-focused)
+- ✅ Logout functionality
+- ✅ Styled with Tailwind CSS + CSS Modules + custom gradients
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 14.2.5 (App Router)
+- **Frontend**: React 18, TypeScript 5.9.3
+- **Real-time**: Socket.io 4.8.1 (server + client)
+- **Styling**: Tailwind CSS 3.4.1, PostCSS, CSS Modules, Geist font
+- **Other**: Vercel Analytics
+
+## 📋 Prerequisites
+
+- Node.js 18+ 
+- npm/yarn/pnpm
+
+## 🏗 Installation
+
+1. Clone the repo:
+   ```bash
+   git clone <your-repo-url>
+   cd ChatApp-master
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📱 Usage
+
+1. Enter a username and click **Join Chat**.
+2. Start typing and sending messages (Enter or Send button).
+3. See messages from all users in real-time.
+4. View online users in the sidebar.
+5. Test multi-user: Open in multiple tabs/windows.
+6. Click **Logout** to leave.
+
+**Demo Flow**:
+- Login as User1 → Joins, sees \"User1 has joined\"
+- Login as User2 → Both see notification + user list updates
+- User1 sends \"Hello!\" → Both see message with username
+- User2 disconnects → User1 sees leave message
+
+## 🗂 Project Structure
+
+```
+ChatApp-master/
+├── app/
+│   ├── layout.js          # Root layout (fonts, metadata)
+│   ├── page.tsx           # Main chat page (client component, state/socket logic)
+│   ├── globals.css        # Global styles
+│   └── favicon.ico
+├── components/            # UI components
+│   ├── ChatWindow.jsx?    # Messages display + input
+│   ├── Sidebar.jsx?       # Users list + logout
+│   └── LoginForm.jsx?     # Login UI
+│   └── Chat.module.css    # Core styles
+├── pages/api/
+│   └── socket.js          # Socket.io server handler
+├── public/                # Static assets
+├── tailwind.config.js     # Tailwind config
+├── package.json           # Dependencies & scripts
+├── tsconfig.json          # TypeScript config
+└── README.md              # This file!
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*Note: Some components inferred from imports; pages/index.js is unused.*
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📸 Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+*(Add screenshots here: login screen, chat with multiple users)*
 
-## Learn More
+## 🚀 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+### Vercel (Recommended)
+1. Push to GitHub.
+2. Import repo at [vercel.com/new](https://vercel.com/new).
+3. Deploy instantly! Socket.io works out-of-box.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Other Platforms
+- Ensure `socket.io` server attaches correctly.
+- Set `NODE_ENV=production`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🔍 Scripts
 
-## Deploy on Vercel
+```bash
+npm run dev     # Development server (localhost:3000)
+npm run build   # Build production
+npm run start   # Production server
+npm run lint    # Lint code
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Fork the repo.
+2. Create branch: `git checkout -b feature/amazing-feature`
+3. Commit: `git commit -m 'Add amazing feature'`
+4. Push: `git push origin feature/amazing-feature`
+5. Open PR!
+
+## 📄 License
+
+MIT - feel free to use/modify!
+
+## 🙏 Acknowledgments
+
+Built with ❤️ using Next.js, Socket.io. Inspired by real-time chat tutorials.
+
+---
+
+**TODO**: Clean up unused files, add tests, mobile responsiveness, persistence (DB), auth (JWT), file uploads.
+
+*Star the repo if helpful!* ⭐
